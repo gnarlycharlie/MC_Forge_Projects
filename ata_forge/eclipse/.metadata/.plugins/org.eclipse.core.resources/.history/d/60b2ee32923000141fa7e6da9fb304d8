@@ -1,0 +1,17 @@
+package uson.rtwa.items;
+
+import cpw.mods.fml.common.registry.GameRegistry;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.Item;
+
+public final class rtwa_carbon {
+	
+	public static Item carbonChunk;
+	
+	public static void init() {
+		carbonChunk = new Item().setCreativeTab(CreativeTabs.tabMaterials).setUnlocalizedName("rtwa_carbonChunk");
+		
+		GameRegistry.registerItem(carbonChunk, "carbonChunk");
+	}
+
+}

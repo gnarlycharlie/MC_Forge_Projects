@@ -1,0 +1,9 @@
+package uson.rtwa.items;
+
+public final class rtwa_carbon {
+	
+	public static void init() {
+		
+	}
+
+}

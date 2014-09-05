@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.equinox.internal.p2.ui.dialogs.UpdateWizard.WizardSettings">
+		<item value="874" key="DIALOG_WIDTH"/>
+		<item value="187" key="DIALOG_Y_ORIGIN"/>
+		<item value="509" key="DIALOG_HEIGHT"/>
+		<item value="43" key="DIALOG_X_ORIGIN"/>
+		<item value="1|Courier New|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Courier New" key="DIALOG_FONT_NAME"/>
+	</section>
+</section>

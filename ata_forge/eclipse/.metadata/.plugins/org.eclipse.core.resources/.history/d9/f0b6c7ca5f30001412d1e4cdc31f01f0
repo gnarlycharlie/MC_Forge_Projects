@@ -1,0 +1,372 @@
+package uson.RTWA;
+
+//[Libraries imported for use in code]
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.init.Items;
+import net.minecraft.item.Item;
+import net.minecraft.item.Item.ToolMaterial;
+import net.minecraft.item.ItemArmor;
+import net.minecraft.item.ItemArmor.ArmorMaterial;
+import net.minecraft.item.ItemAxe;
+import net.minecraft.item.ItemHoe;
+import net.minecraft.item.ItemPickaxe;
+import net.minecraft.item.ItemSpade;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.ItemSword;
+import net.minecraftforge.common.util.EnumHelper;
+import cpw.mods.fml.common.Mod;
+import cpw.mods.fml.common.Mod.EventHandler;
+import cpw.mods.fml.common.Mod.Instance;
+import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLPostInitializationEvent;
+import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.registry.GameRegistry;
+import cpw.mods.fml.common.registry.LanguageRegistry;
+
+//[Information on this mod]
+@Mod(modid="rtwa", name="Refined Tools, Weapons and Armor", version="1.7.10")
+
+public class RTWA_core {
+	
+	@Instance ("rtwa")
+	public static RTWA_core instance;
+
+	//[Tool Material]
+	public static ToolMaterial CARBONTOOL=EnumHelper.addToolMaterial("carbon", 1, 250, 4.0F, 1, 10);
+	public static ToolMaterial BLAZETOOL=EnumHelper.addToolMaterial("blaze", 3, 131, 10.0F, 2, 14);
+	public static ToolMaterial IRONREFTOOL=EnumHelper.addToolMaterial("ironrefined", 2, 501, 7.0F, 3, 18);
+	public static ToolMaterial GOLDREFTOOL=EnumHelper.addToolMaterial("goldrefined", 3, 250, 10.0F, 2, 22);
+	public static ToolMaterial DIAMONDREFTOOL=EnumHelper.addToolMaterial("diamondrefined", 3, 3123, 12.0F, 4, 14);
+	public static ToolMaterial POWERTOOL=EnumHelper.addToolMaterial("power", 3, 9371, 16.0F, 6, 5);
+	
+	//[Armor Material]
+	public static ArmorMaterial CARBONARMOR=EnumHelper.addArmorMaterial("carbon", 10, new int[]{2, 4, 2, 2}, 12);
+	public static ArmorMaterial BLAZEARMOR=EnumHelper.addArmorMaterial("blaze", 10, new int[]{2, 4, 2, 2}, 12);
+	public static ArmorMaterial IRONREFARMOR=EnumHelper.addArmorMaterial("ironrefined", 24, new int[]{4, 9, 7, 4}, 12);
+	public static ArmorMaterial GOLDREFARMOR=EnumHelper.addArmorMaterial("goldrefined", 14, new int[]{3, 5, 3, 3}, 25);
+	public static ArmorMaterial DIAMONDREFARMOR=EnumHelper.addArmorMaterial("diamondrefined", 41, new int[]{7, 16, 12, 6}, 15);
+	public static ArmorMaterial POWERARMOR=EnumHelper.addArmorMaterial("power",53, new int[]{10, 19, 15, 9}, 9);
+	
+	//[Items]
+	
+		//[Carbon]
+	public static Item carbonChunk=new Item().setCreativeTab(CreativeTabs.tabMaterials).setUnlocalizedName("carbonChunk").setTextureName("rtwa:carbonChunk");
+	public static Item carbonRefined=new Item().setCreativeTab(CreativeTabs.tabMaterials).setUnlocalizedName("carbonRefined").setTextureName("rtwa:carbonRefined");
+	//public static Item carbonAxe=new ItemAxe(CARBONTOOL).setUnlocalizedName("carbonAxe").setTextureName("rtwa:carbonAxe");
+	public static Item carbonHoe=new ItemHoe(CARBONTOOL).setUnlocalizedName("carbonHoe").setTextureName("rtwa:carbonHoe");
+	//public static Item carbonPick=new ItemPickaxe(CARBONTOOL).setUnlocalizedName("carbonPickaxe").setTextureName("rtwa:carbonPickaxe");
+	public static Item carbonShovel=new ItemSpade(CARBONTOOL).setUnlocalizedName("carbonShovel").setTextureName("rtwa:carbonShovel");
+	public static Item carbonSword=new ItemSword(CARBONTOOL).setUnlocalizedName("carbonSword").setTextureName("rtwa:carbonSword");/*
+	public static Item carbonHelm=new ItemArmor(CARBONARMOR, ModLoader.addArmor("carbon"), 0).setCreativeTab(CreativeTabs.tabCombat).setUnlocalizedName("carbonHelmet").setTextureName("rtwa:carbonHelmet");
+	public static Item carbonArmor=new ItemArmor(CARBONARMOR, ModLoader.addArmor("carbon"), 1).setCreativeTab(CreativeTabs.tabCombat).setUnlocalizedName("carbonArmor").setTextureName("rtwa:carbonArmor");
+	public static Item carbonPants=new ItemArmor(CARBONARMOR, ModLoader.addArmor("carbon"), 2).setCreativeTab(CreativeTabs.tabCombat).setUnlocalizedName("carbonPants").setTextureName("rtwa:carbonPants");
+	public static Item carbonBoots=new ItemArmor(CARBONARMOR, ModLoader.addArmor("carbon"), 3).setCreativeTab(CreativeTabs.tabCombat).setUnlocalizedName("carbonBoots").setTextureName("rtwa:carbonBoots");*/
+	
+		//[Blaze]
+	public static Item blazeChunk=new Item().setCreativeTab(CreativeTabs.tabMaterials).setUnlocalizedName("blazeChunk").setTextureName("rtwa:blazeChunk");
+	public static Item blazeRefined=new Item().setCreativeTab(CreativeTabs.tabMaterials).setUnlocalizedName("blazeRefined").setTextureName("rtwa:blazeRefined");
+	//public static Item blazeAxe=new ItemAxe(BLAZETOOL).setCreativeTab(CreativeTabs.tabTools).setUnlocalizedName("blazeAxe").setTextureName("rtwa:blazeAxe");
+	public static Item blazeHoe=new ItemHoe(BLAZETOOL).setCreativeTab(CreativeTabs.tabTools).setUnlocalizedName("blazeHoe").setTextureName("rtwa:blazeHoe");
+	//public static Item blazePick=new ItemPickaxe(BLAZETOOL).setCreativeTab(CreativeTabs.tabTools).setUnlocalizedName("blazePickaxe").setTextureName("rtwa:blazePickaxe");
+	public static Item blazeShovel=new ItemSpade(BLAZETOOL).setCreativeTab(CreativeTabs.tabTools).setUnlocalizedName("blazeShovel").setTextureName("rtwa:blazeShovel");
+	public static Item blazeSword=new ItemSword(BLAZETOOL).setCreativeTab(CreativeTabs.tabCombat).setUnlocalizedName("blazeSword").setTextureName("rtwa:blazeSword");/*
+	public static Item blazeHelm=new ItemArmor(11305, BLAZEARMOR, ModLoader.addArmor("blaze"), 0).setCreativeTab(CreativeTabs.tabCombat).setUnlocalizedName("blazeHelmet").setTextureName("rtwa:blazeHelmet");
+	public static Item blazeArmor=new ItemArmor(11306, BLAZEARMOR, ModLoader.addArmor("blaze"), 1).setCreativeTab(CreativeTabs.tabCombat).setUnlocalizedName("blazeArmor").setTextureName("rtwa:blazeArmor");
+	public static Item blazePants=new ItemArmor(11307, BLAZEARMOR, ModLoader.addArmor("blaze"), 2).setCreativeTab(CreativeTabs.tabCombat).setUnlocalizedName("blazePants").setTextureName("rtwa:blazePants");
+	public static Item blazeBoots=new ItemArmor(11308, BLAZEARMOR, ModLoader.addArmor("blaze"), 3).setCreativeTab(CreativeTabs.tabCombat).setUnlocalizedName("blazeBoots").setTextureName("rtwa:blazeBoots");*/
+	
+		//[Refined Iron]
+	public static Item ironChunk=new Item().setCreativeTab(CreativeTabs.tabMaterials).setUnlocalizedName("ironChunk").setTextureName("rtwa:ironChunk");
+	public static Item ironRefined=new Item().setCreativeTab(CreativeTabs.tabMaterials).setUnlocalizedName("ironRefined").setTextureName("rtwa:ironRefined");
+	//public static Item ironRefinedAxe=new ItemAxe(IRONREFTOOL).setCreativeTab(CreativeTabs.tabTools).setUnlocalizedName("ironRefinedAxe").setTextureName("rtwa:ironRefinedAxe");
+	public static Item ironRefinedHoe=new ItemHoe(IRONREFTOOL).setCreativeTab(CreativeTabs.tabTools).setUnlocalizedName("ironRefinedHoe").setTextureName("rtwa:ironRefinedHoe");
+	//public static Item ironRefinedPick=new ItemPickaxe(IRONREFTOOL).setCreativeTab(CreativeTabs.tabTools).setUnlocalizedName("ironRefinedPickaxe").setTextureName("rtwa:ironRefinedPickaxe");
+	public static Item ironRefinedShovel=new ItemSpade(IRONREFTOOL).setCreativeTab(CreativeTabs.tabTools).setUnlocalizedName("ironRefinedShovel").setTextureName("rtwa:ironRefinedShovel");
+	public static Item ironRefinedSword=new ItemSword(IRONREFTOOL).setCreativeTab(CreativeTabs.tabCombat).setUnlocalizedName("ironRefinedSword").setTextureName("rtwa:ironRefinedSword");/*
+	public static Item ironRefinedHelm=new ItemArmor(11309, IRONREFARMOR, ModLoader.addArmor("ironrefined"), 0).setCreativeTab(CreativeTabs.tabCombat).setUnlocalizedName("ironRefinedHelmet").setTextureName("rtwa:ironRefinedHelmet");
+	public static Item ironRefinedArmor=new ItemArmor(11310, IRONREFARMOR, ModLoader.addArmor("ironrefined"), 1).setCreativeTab(CreativeTabs.tabCombat).setUnlocalizedName("ironRefinedArmor").setTextureName("rtwa:ironRefinedArmor");
+	public static Item ironRefinedPants=new ItemArmor(11311, IRONREFARMOR, ModLoader.addArmor("ironrefined"), 2).setCreativeTab(CreativeTabs.tabCombat).setUnlocalizedName("ironRefinedPants").setTextureName("rtwa:ironRefinedPants");
+	public static Item ironRefinedBoots=new ItemArmor(11312, IRONREFARMOR, ModLoader.addArmor("ironrefined"), 3).setCreativeTab(CreativeTabs.tabCombat).setUnlocalizedName("ironRefinedBoots").setTextureName("rtwa:ironRefinedBoots");*/
+	
+		//[Refined Gold]
+	public static Item goldChunk=new Item().setCreativeTab(CreativeTabs.tabMaterials).setUnlocalizedName("goldChunk").setTextureName("rtwa:goldChunk");
+	public static Item goldRefined=new Item().setCreativeTab(CreativeTabs.tabMaterials).setUnlocalizedName("goldRefined").setTextureName("rtwa:goldRefined");
+	//public static Item goldRefinedAxe=new ItemAxe(GOLDREFTOOL).setCreativeTab(CreativeTabs.tabTools).setUnlocalizedName("goldRefinedAxe").setTextureName("rtwa:goldRefinedAxe");
+	public static Item goldRefinedHoe=new ItemHoe(GOLDREFTOOL).setCreativeTab(CreativeTabs.tabTools).setUnlocalizedName("goldRefinedHoe").setTextureName("rtwa:goldRefinedHoe");
+	//public static Item goldRefinedPick=new ItemPickaxe(GOLDREFTOOL).setCreativeTab(CreativeTabs.tabTools).setUnlocalizedName("goldRefinedPickaxe").setTextureName("rtwa:goldRefinedPickaxe");
+	public static Item goldRefinedShovel=new ItemSpade(GOLDREFTOOL).setCreativeTab(CreativeTabs.tabTools).setUnlocalizedName("goldRefinedShovel").setTextureName("rtwa:goldRefinedShovel");
+	public static Item goldRefinedSword=new ItemSword(GOLDREFTOOL).setCreativeTab(CreativeTabs.tabCombat).setUnlocalizedName("goldRefinedSword").setTextureName("rtwa:goldRefinedSword");/*
+	public static Item goldRefinedHelm=new ItemArmor(11313, GOLDREFARMOR, ModLoader.addArmor("goldrefined"), 0).setCreativeTab(CreativeTabs.tabCombat).setUnlocalizedName("goldRefinedHelmet").setTextureName("rtwa:goldRefinedHelmet");
+	public static Item goldRefinedArmor=new ItemArmor(11314, GOLDREFARMOR, ModLoader.addArmor("goldrefined"), 1).setCreativeTab(CreativeTabs.tabCombat).setUnlocalizedName("goldRefinedArmor").setTextureName("rtwa:goldRefinedArmor");
+	public static Item goldRefinedPants=new ItemArmor(11315, GOLDREFARMOR, ModLoader.addArmor("goldrefined"), 2).setCreativeTab(CreativeTabs.tabCombat).setUnlocalizedName("goldRefinedPants").setTextureName("rtwa:goldRefinedPants");
+	public static Item goldRefinedBoots=new ItemArmor(11316, GOLDREFARMOR, ModLoader.addArmor("goldrefined"), 3).setCreativeTab(CreativeTabs.tabCombat).setUnlocalizedName("goldRefinedBoots").setTextureName("rtwa:goldRefinedBoots");*/
+	
+		//[Refined Diamond]
+	public static Item diamondChunk=new Item().setCreativeTab(CreativeTabs.tabMaterials).setUnlocalizedName("diamondChunk").setTextureName("rtwa:diamondChunk");
+	public static Item diamondRefined=new Item().setCreativeTab(CreativeTabs.tabMaterials).setUnlocalizedName("diamondRefined").setTextureName("rtwa:diamondRefined");
+	//public static Item diamondRefinedAxe=new ItemAxe(DIAMONDREFTOOL).setCreativeTab(CreativeTabs.tabTools).setUnlocalizedName("diamondRefinedAxe").setTextureName("rtwa:diamondRefinedAxe");
+	public static Item diamondRefinedHoe=new ItemHoe(DIAMONDREFTOOL).setCreativeTab(CreativeTabs.tabTools).setUnlocalizedName("diamondRefinedHoe").setTextureName("rtwa:diamondRefinedHoe");
+	//public static Item diamondRefinedPick=new ItemPickaxe(DIAMONDREFTOOL).setCreativeTab(CreativeTabs.tabTools).setUnlocalizedName("diamondRefinedPickaxe").setTextureName("rtwa:diamondRefinedPickaxe");
+	public static Item diamondRefinedShovel=new ItemSpade(DIAMONDREFTOOL).setCreativeTab(CreativeTabs.tabTools).setUnlocalizedName("diamondRefinedShovel").setTextureName("rtwa:diamondRefinedShovel");
+	public static Item diamondRefinedSword=new ItemSword(DIAMONDREFTOOL).setCreativeTab(CreativeTabs.tabCombat).setUnlocalizedName("diamondRefinedSword").setTextureName("rtwa:diamondRefinedSword");/*
+	public static Item diamondRefinedHelm=new ItemArmor(11317, DIAMONDREFARMOR, ModLoader.addArmor("diamondrefined"), 0).setCreativeTab(CreativeTabs.tabCombat).setUnlocalizedName("diamondRefinedHelmet").setTextureName("rtwa:diamondRefinedHelmet");
+	public static Item diamondRefinedArmor=new ItemArmor(11318, DIAMONDREFARMOR, ModLoader.addArmor("diamondrefined"), 1).setCreativeTab(CreativeTabs.tabCombat).setUnlocalizedName("diamondRefinedArmor").setTextureName("rtwa:diamondRefinedArmor");
+	public static Item diamondRefinedPants=new ItemArmor(11319, DIAMONDREFARMOR, ModLoader.addArmor("diamondrefined"), 2).setCreativeTab(CreativeTabs.tabCombat).setUnlocalizedName("diamondRefinedPants").setTextureName("rtwa:diamondRefinedPants");
+	public static Item diamondRefinedBoots=new ItemArmor(11320, DIAMONDREFARMOR, ModLoader.addArmor("diamondrefined"), 3).setCreativeTab(CreativeTabs.tabCombat).setUnlocalizedName("diamondRefinedBoots").setTextureName("rtwa:diamondRefinedBoots");*/
+	
+		//[Power]
+	public static Item powerChunk=new Item().setCreativeTab(CreativeTabs.tabMaterials).setUnlocalizedName("powerChunk").setTextureName("rtwa:powerChunk");
+	public static Item powerRefined=new Item().setCreativeTab(CreativeTabs.tabMaterials).setUnlocalizedName("powerRefined").setTextureName("rtwa:powerRefined");
+	//public static Item powerAxe=new ItemAxe(POWERTOOL).setCreativeTab(CreativeTabs.tabTools).setUnlocalizedName("powerAxe").setTextureName("rtwa:powerAxe");
+	public static Item powerHoe=new ItemHoe(POWERTOOL).setCreativeTab(CreativeTabs.tabTools).setUnlocalizedName("powerHoe").setTextureName("rtwa:powerHoe");
+	//public static Item powerPick=new ItemPickaxe(POWERTOOL).setCreativeTab(CreativeTabs.tabTools).setUnlocalizedName("powerPickaxe").setTextureName("rtwa:powerPickaxe");
+	public static Item powerShovel=new ItemSpade(POWERTOOL).setCreativeTab(CreativeTabs.tabTools).setUnlocalizedName("powerShovel").setTextureName("rtwa:powerShovel");
+	public static Item powerSword=new ItemSword(POWERTOOL).setCreativeTab(CreativeTabs.tabCombat).setUnlocalizedName("powerSword").setTextureName("rtwa:powerSword");/*
+	public static Item powerHelm=new ItemArmor(11321, POWERARMOR, ModLoader.addArmor("power"), 0).setCreativeTab(CreativeTabs.tabCombat).setUnlocalizedName("powerHelmet").setTextureName("rtwa:powerHelmet");
+	public static Item powerArmor=new ItemArmor(11322, POWERARMOR, ModLoader.addArmor("power"), 1).setCreativeTab(CreativeTabs.tabCombat).setUnlocalizedName("powerArmor").setTextureName("rtwa:powerArmor");
+	public static Item powerPants=new ItemArmor(11323, POWERARMOR, ModLoader.addArmor("power"), 2).setCreativeTab(CreativeTabs.tabCombat).setUnlocalizedName("powerPants").setTextureName("rtwa:powerPants");
+	public static Item powerBoots=new ItemArmor(11324, POWERARMOR, ModLoader.addArmor("power"), 3).setCreativeTab(CreativeTabs.tabCombat).setUnlocalizedName("powerBoots").setTextureName("rtwa:powerBoots");*/
+
+	@EventHandler
+	public void preInit(FMLPreInitializationEvent event){	
+	}
+	
+	@EventHandler
+	public void load(FMLInitializationEvent event){
+		/*
+		//[Name Registration]
+		
+			//[Carbon]
+		LanguageRegistry.addName(carbonChunk, "Coal Chunk");
+		LanguageRegistry.addName(carbonRefined, "Carbon Ingot");
+		LanguageRegistry.addName(carbonAxe, "Carbon Axe");
+		LanguageRegistry.addName(carbonHoe, "Carbon Hoe");
+		LanguageRegistry.addName(carbonPick, "Carbon Pickaxe");
+		LanguageRegistry.addName(carbonShovel, "Carbon Shovel");
+		LanguageRegistry.addName(carbonSword, "Carbon Sword");
+		LanguageRegistry.addName(carbonHelm, "Carbon Helmet");
+		LanguageRegistry.addName(carbonArmor, "Carbon Chestplate");
+		LanguageRegistry.addName(carbonPants, "Carbon Leggings");
+		LanguageRegistry.addName(carbonBoots, "Carbon Boots");
+		
+			//[Blaze]
+		LanguageRegistry.addName(blazeChunk, "Blaze Chunk");
+		LanguageRegistry.addName(blazeRefined, "Blaze Ingot");
+		LanguageRegistry.addName(blazeAxe, "Blaze Axe");
+		LanguageRegistry.addName(blazeHoe, "Blaze Hoe");
+		LanguageRegistry.addName(blazePick, "Blaze Pickaxe");
+		LanguageRegistry.addName(blazeShovel, "Blaze Shovel");
+		LanguageRegistry.addName(blazeSword, "Blaze Sword");
+		LanguageRegistry.addName(blazeHelm, "Blaze Helmet");
+		LanguageRegistry.addName(blazeArmor, "Blaze Chestplate");
+		LanguageRegistry.addName(blazePants, "Blaze Leggings");
+		LanguageRegistry.addName(blazeBoots, "Blaze Boots");
+		
+			//[Refined Iron]
+		LanguageRegistry.addName(ironChunk, "Iron Chunk");
+		LanguageRegistry.addName(ironRefined, "Refined Iron Ingot");
+		LanguageRegistry.addName(ironRefinedAxe, "Refined Iron Axe");
+		LanguageRegistry.addName(ironRefinedHoe, "Refined Iron Hoe");
+		LanguageRegistry.addName(ironRefinedPick, "Refined Iron Pickaxe");
+		LanguageRegistry.addName(ironRefinedShovel, "Refined Iron Shovel");
+		LanguageRegistry.addName(ironRefinedSword, "Refined Iron Sword");
+		LanguageRegistry.addName(ironRefinedHelm, "Refined Iron Helmet");
+		LanguageRegistry.addName(ironRefinedArmor, "Refined Iron Chestplate");
+		LanguageRegistry.addName(ironRefinedPants, "Refined Iron Leggings");
+		LanguageRegistry.addName(ironRefinedBoots, "Refined Iron Boots");
+		
+			//[Refined Gold]
+		LanguageRegistry.addName(goldChunk, "Gold Chunk");
+		LanguageRegistry.addName(goldRefined, "Refined Gold Ingot");
+		LanguageRegistry.addName(goldRefinedAxe, "Refined Gold Axe");
+		LanguageRegistry.addName(goldRefinedHoe, "Refined Gold Hoe");
+		LanguageRegistry.addName(goldRefinedPick, "Refined Gold Pickaxe");
+		LanguageRegistry.addName(goldRefinedShovel, "Refined Gold Shovel");
+		LanguageRegistry.addName(goldRefinedSword, "Refined Gold Sword");
+		LanguageRegistry.addName(goldRefinedHelm, "Refined Gold Helmet");
+		LanguageRegistry.addName(goldRefinedArmor, "Refined Gold Chestplate");
+		LanguageRegistry.addName(goldRefinedPants, "Refined Gold Leggings");
+		LanguageRegistry.addName(goldRefinedBoots, "Refined Gold Boots");
+		
+			//[Refined Diamond]
+		LanguageRegistry.addName(diamondChunk, "Diamond Chunk");
+		LanguageRegistry.addName(diamondRefined, "Refined Diamond");
+		LanguageRegistry.addName(diamondRefinedAxe, "Refined Diamond Axe");
+		LanguageRegistry.addName(diamondRefinedHoe, "Refined Diamond Hoe");
+		LanguageRegistry.addName(diamondRefinedPick, "Refined Diamond Pickaxe");
+		LanguageRegistry.addName(diamondRefinedShovel, "Refined Diamond Shovel");
+		LanguageRegistry.addName(diamondRefinedSword, "Refined Diamond Sword");
+		LanguageRegistry.addName(diamondRefinedHelm, "Refined Diamond Helmet");
+		LanguageRegistry.addName(diamondRefinedArmor, "Refined Diamond Chestplate");
+		LanguageRegistry.addName(diamondRefinedPants, "Refined Diamond Leggings");
+		LanguageRegistry.addName(diamondRefinedBoots, "Refined Diamond Boots");
+		
+			//[Power]
+		LanguageRegistry.addName(powerChunk, "Power Chunk");
+		LanguageRegistry.addName(powerRefined, "Power Plate");
+		LanguageRegistry.addName(powerAxe, "Power Axe");
+		LanguageRegistry.addName(powerHoe, "Power Hoe");
+		LanguageRegistry.addName(powerPick, "Power Pickaxe");
+		LanguageRegistry.addName(powerShovel, "Power Shovel");
+		LanguageRegistry.addName(powerSword, "Power Sword");
+		LanguageRegistry.addName(powerHelm, "Power Helmet");
+		LanguageRegistry.addName(powerArmor, "Power Chestplate");
+		LanguageRegistry.addName(powerPants, "Power Leggings");
+		LanguageRegistry.addName(powerBoots, "Power Boots");
+		*/
+		//[Recipes]
+		
+			//[Carbon]
+		GameRegistry.addRecipe(new ItemStack(carbonChunk, 1), new Object[]{"cc ", "cc ", "   ", 'c', Items.coal});
+		GameRegistry.addRecipe(new ItemStack(carbonChunk, 1), new Object[]{" cc", " cc", "   ", 'c', Items.coal});
+		GameRegistry.addRecipe(new ItemStack(carbonChunk, 1), new Object[]{"   ", "cc ", "cc ", 'c', Items.coal});
+		GameRegistry.addRecipe(new ItemStack(carbonChunk, 1), new Object[]{"   ", " cc", " cc", 'c', Items.coal});
+		GameRegistry.addShapelessRecipe(new ItemStack(Items.coal, 4), new Object[]{carbonChunk});
+		GameRegistry.addSmelting(carbonChunk, new ItemStack(carbonRefined, 1), 1f);/*
+		GameRegistry.addRecipe(new ItemStack(carbonAxe, 1), new Object[]{"cc ", "cs ", " s ", 'c', carbonRefined, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(carbonAxe, 1), new Object[]{" cc", " cs", "  s", 'c', carbonRefined, 's', Items.stick});*/
+		GameRegistry.addRecipe(new ItemStack(carbonHoe, 1), new Object[]{"cc ", " s ", " s ", 'c', carbonRefined, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(carbonHoe, 1), new Object[]{" cc", "  s", "  s", 'c', carbonRefined, 's', Items.stick});
+		//GameRegistry.addRecipe(new ItemStack(carbonPick, 1), new Object[]{"ccc", " s ", " s ", 'c', carbonRefined, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(carbonShovel, 1), new Object[]{" c ", " s ", " s ", 'c', carbonRefined, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(carbonShovel, 1), new Object[]{"c  ", "s  ", "s  ", 'c', carbonRefined, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(carbonShovel, 1), new Object[]{"  c", "  s", "  s", 'c', carbonRefined, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(carbonSword, 1), new Object[]{" c ", " c ", " s ", 'c', carbonRefined, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(carbonSword, 1), new Object[]{"c  ", "c  ", "s  ", 'c', carbonRefined, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(carbonSword, 1), new Object[]{"  c", "  c", "  s", 'c', carbonRefined, 's', Items.stick});/*
+		GameRegistry.addRecipe(new ItemStack(carbonHelm, 1), new Object[]{"ccc", "c c", "   ", 'c', carbonRefined});
+		GameRegistry.addRecipe(new ItemStack(carbonHelm, 1), new Object[]{"   ", "ccc", "c c", 'c', carbonRefined});
+		GameRegistry.addRecipe(new ItemStack(carbonArmor, 1), new Object[]{"c c", "ccc", "ccc", 'c', carbonRefined});
+		GameRegistry.addRecipe(new ItemStack(carbonPants, 1), new Object[]{"ccc", "c c", "c c", 'c', carbonRefined});
+		GameRegistry.addRecipe(new ItemStack(carbonBoots, 1), new Object[]{"   ", "c c", "c c", 'c', carbonRefined});
+		GameRegistry.addRecipe(new ItemStack(carbonBoots, 1), new Object[]{"c c", "c c", "   ", 'c', carbonRefined});*/
+		
+			//[Blaze]
+		GameRegistry.addRecipe(new ItemStack(blazeChunk, 1), new Object[]{"b  ", "b  ", "   ", 'b', Items.blaze_rod});
+		GameRegistry.addRecipe(new ItemStack(blazeChunk, 1), new Object[]{" b ", " b ", "   ", 'b', Items.blaze_rod});
+		GameRegistry.addRecipe(new ItemStack(blazeChunk, 1), new Object[]{"  b", "  b", "   ", 'b', Items.blaze_rod});
+		GameRegistry.addRecipe(new ItemStack(blazeChunk, 1), new Object[]{"   ", "b  ", "b  ", 'b', Items.blaze_rod});
+		GameRegistry.addRecipe(new ItemStack(blazeChunk, 1), new Object[]{"   ", " b ", " b ", 'b', Items.blaze_rod});
+		GameRegistry.addRecipe(new ItemStack(blazeChunk, 1), new Object[]{"   ", "  b", "  b", 'b', Items.blaze_rod});
+		GameRegistry.addShapelessRecipe(new ItemStack(Items.blaze_rod, 2), new Object[]{blazeChunk});
+		GameRegistry.addSmelting(blazeChunk, new ItemStack(blazeRefined, 1), 1f);
+		GameRegistry.addRecipe(new ItemStack(blazeAxe, 1), new Object[]{"bb ", "bs ", " s ", 'b', blazeRefined, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(blazeAxe, 1), new Object[]{" bb", " bs", "  s", 'b', blazeRefined, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(blazeHoe, 1), new Object[]{"bb ", " s ", " s ", 'b', blazeRefined, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(blazeHoe, 1), new Object[]{" bb", "  s", "  s", 'b', blazeRefined, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(blazePick, 1), new Object[]{"bbb", " s ", " s ", 'b', blazeRefined, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(blazeShovel, 1), new Object[]{" b ", " s ", " s ", 'b', blazeRefined, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(blazeShovel, 1), new Object[]{"b  ", "s  ", "s  ", 'b', blazeRefined, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(blazeShovel, 1), new Object[]{"  b", "  s", "  s", 'b', blazeRefined, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(blazeSword, 1), new Object[]{" b ", " b ", " s ", 'b', blazeRefined, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(blazeSword, 1), new Object[]{"b  ", "b  ", "s  ", 'b', blazeRefined, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(blazeSword, 1), new Object[]{"  b", "  b", "  s", 'b', blazeRefined, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(blazeHelm, 1), new Object[]{"bbb", "b b", "   ", 'b', blazeRefined});
+		GameRegistry.addRecipe(new ItemStack(blazeHelm, 1), new Object[]{"   ", "bbb", "b b", 'b', blazeRefined});
+		GameRegistry.addRecipe(new ItemStack(blazeArmor, 1), new Object[]{"b b", "bbb", "bbb", 'b', blazeRefined});
+		GameRegistry.addRecipe(new ItemStack(blazePants, 1), new Object[]{"bbb", "b b", "b b", 'b', blazeRefined});
+		GameRegistry.addRecipe(new ItemStack(blazeBoots, 1), new Object[]{"   ", "b b", "b b", 'b', blazeRefined});
+		GameRegistry.addRecipe(new ItemStack(blazeBoots, 1), new Object[]{"b b", "b b", "   ", 'b', blazeRefined});
+		
+			//[Refined Iron]
+		GameRegistry.addRecipe(new ItemStack(ironChunk, 1), new Object[]{"i  ", "i  ", "   ", 'i' , Items.ingotIron});
+		GameRegistry.addRecipe(new ItemStack(ironChunk, 1), new Object[]{" i ", " i ", "   ", 'i' , Items.ingotIron});
+		GameRegistry.addRecipe(new ItemStack(ironChunk, 1), new Object[]{"  i", "  i", "   ", 'i' , Items.ingotIron});
+		GameRegistry.addRecipe(new ItemStack(ironChunk, 1), new Object[]{"   ", "i  ", "i  ", 'i' , Items.ingotIron});
+		GameRegistry.addRecipe(new ItemStack(ironChunk, 1), new Object[]{"   ", " i ", " i ", 'i' , Items.ingotIron});
+		GameRegistry.addRecipe(new ItemStack(ironChunk, 1), new Object[]{"   ", "  i", "  i", 'i' , Items.ingotIron});
+		GameRegistry.addShapelessRecipe(new ItemStack(Items.ingotIron, 2), new Object[]{ironChunk});
+		GameRegistry.addSmelting(ironChunk, new ItemStack(ironRefined, 1), 1f);
+		GameRegistry.addRecipe(new ItemStack(ironRefinedAxe, 1), new Object[]{"ii ", "is ", " s ", 'i', ironRefined, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(ironRefinedAxe, 1), new Object[]{" ii", " is", "  s", 'i', ironRefined, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(ironRefinedHoe, 1), new Object[]{"ii ", " s ", " s ", 'i', ironRefined, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(ironRefinedHoe, 1), new Object[]{" ii", "  s", "  s", 'i', ironRefined, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(ironRefinedPick, 1), new Object[]{"iii", " s ", " s ", 'i', ironRefined, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(ironRefinedShovel, 1), new Object[]{" i ", " s ", " s ", 'i', ironRefined, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(ironRefinedShovel, 1), new Object[]{"i  ", "s  ", "s  ", 'i', ironRefined, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(ironRefinedShovel, 1), new Object[]{"  i", "  s", "  s", 'i', ironRefined, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(ironRefinedSword, 1), new Object[]{" i ", " i ", " s ", 'i', ironRefined, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(ironRefinedSword, 1), new Object[]{"i  ", "i  ", "s  ", 'i', ironRefined, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(ironRefinedSword, 1), new Object[]{"  i", "  i", "  s", 'i', ironRefined, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(ironRefinedHelm, 1), new Object[]{"iii", "i i", "   ", 'i', ironRefined});
+		GameRegistry.addRecipe(new ItemStack(ironRefinedHelm, 1), new Object[]{"   ", "iii", "i i", 'i', ironRefined});
+		GameRegistry.addRecipe(new ItemStack(ironRefinedArmor, 1), new Object[]{"i i", "iii", "iii", 'i', ironRefined});
+		GameRegistry.addRecipe(new ItemStack(ironRefinedPants, 1), new Object[]{"iii", "i i", "i i", 'i', ironRefined});
+		GameRegistry.addRecipe(new ItemStack(ironRefinedBoots, 1), new Object[]{"   ", "i i", "i i", 'i', ironRefined});
+		GameRegistry.addRecipe(new ItemStack(ironRefinedBoots, 1), new Object[]{"i i", "i i", "   ", 'i', ironRefined});
+		
+		//[Refined Gold]
+		GameRegistry.addRecipe(new ItemStack(goldChunk, 1), new Object[]{"g  ", "g  ", "   ", 'g' , Items.ingotGold});
+		GameRegistry.addRecipe(new ItemStack(goldChunk, 1), new Object[]{" g ", " g ", "   ", 'g' , Items.ingotGold});
+		GameRegistry.addRecipe(new ItemStack(goldChunk, 1), new Object[]{"  g", "  g", "   ", 'g' , Items.ingotGold});
+		GameRegistry.addRecipe(new ItemStack(goldChunk, 1), new Object[]{"   ", "g  ", "g  ", 'g' , Items.ingotGold});
+		GameRegistry.addRecipe(new ItemStack(goldChunk, 1), new Object[]{"   ", " g ", " g ", 'g' , Items.ingotGold});
+		GameRegistry.addRecipe(new ItemStack(goldChunk, 1), new Object[]{"   ", "  g", "  g", 'g' , Items.ingotGold});
+		GameRegistry.addShapelessRecipe(new ItemStack(Items.ingotGold, 2), new Object[]{goldChunk});
+		GameRegistry.addSmelting(goldChunk, new ItemStack(goldRefined, 1), 1f);
+		GameRegistry.addRecipe(new ItemStack(goldRefinedAxe, 1), new Object[]{"gg ", "gs ", " s ", 'g', goldRefined, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(goldRefinedAxe, 1), new Object[]{" gg", " gs", "  s", 'g', goldRefined, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(goldRefinedHoe, 1), new Object[]{"gg ", " s ", " s ", 'g', goldRefined, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(goldRefinedHoe, 1), new Object[]{" gg", "  s", "  s", 'g', goldRefined, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(goldRefinedPick, 1), new Object[]{"ggg", " s ", " s ", 'g', goldRefined, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(goldRefinedShovel, 1), new Object[]{" g ", " s ", " s ", 'g', goldRefined, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(goldRefinedShovel, 1), new Object[]{"g  ", "s  ", "s  ", 'g', goldRefined, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(goldRefinedShovel, 1), new Object[]{"  g", "  s", "  s", 'g', goldRefined, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(goldRefinedSword, 1), new Object[]{" g ", " g ", " s ", 'g', goldRefined, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(goldRefinedSword, 1), new Object[]{"g  ", "g  ", "s  ", 'g', goldRefined, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(goldRefinedSword, 1), new Object[]{"  g", "  g", "  s", 'g', goldRefined, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(goldRefinedHelm, 1), new Object[]{"ggg", "g g", "   ", 'g', goldRefined});
+		GameRegistry.addRecipe(new ItemStack(goldRefinedHelm, 1), new Object[]{"   ", "ggg", "g g", 'g', goldRefined});
+		GameRegistry.addRecipe(new ItemStack(goldRefinedArmor, 1), new Object[]{"g g", "ggg", "ggg", 'g', goldRefined});
+		GameRegistry.addRecipe(new ItemStack(goldRefinedPants, 1), new Object[]{"ggg", "g g", "g g", 'g', goldRefined});
+		GameRegistry.addRecipe(new ItemStack(goldRefinedBoots, 1), new Object[]{"   ", "g g", "g g", 'g', goldRefined});
+		GameRegistry.addRecipe(new ItemStack(goldRefinedBoots, 1), new Object[]{"g g", "g g", "   ", 'g', goldRefined});
+		
+		//[Refined Diamond]
+		GameRegistry.addRecipe(new ItemStack(diamondChunk, 1), new Object[]{"qdq", "qdq", "   ", 'q', Items.netherQuartz, 'd', Items.diamond});
+		GameRegistry.addRecipe(new ItemStack(diamondChunk, 1), new Object[]{"   ", "qdq", "qdq", 'q', Items.netherQuartz, 'd', Items.diamond});
+		GameRegistry.addSmelting(diamondChunk, new ItemStack(diamondRefined, 1), 1f);
+		GameRegistry.addRecipe(new ItemStack(diamondRefinedAxe, 1), new Object[]{"dd ", "ds ", " s ", 'd', diamondRefined, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(diamondRefinedAxe, 1), new Object[]{" dd", " ds", "  s", 'd', diamondRefined, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(diamondRefinedHoe, 1), new Object[]{"dd ", " s ", " s ", 'd', diamondRefined, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(diamondRefinedHoe, 1), new Object[]{" dd", "  s", "  s", 'd', diamondRefined, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(diamondRefinedPick, 1), new Object[]{"ddd", " s ", " s ", 'd', diamondRefined, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(diamondRefinedShovel, 1), new Object[]{" d ", " s ", " s ", 'd', diamondRefined, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(diamondRefinedShovel, 1), new Object[]{"d  ", "s  ", "s  ", 'd', diamondRefined, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(diamondRefinedShovel, 1), new Object[]{"  d", "  s", "  s", 'd', diamondRefined, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(diamondRefinedSword, 1), new Object[]{" d ", " d ", " s ", 'd', diamondRefined, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(diamondRefinedSword, 1), new Object[]{"d  ", "d  ", "s  ", 'd', diamondRefined, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(diamondRefinedSword, 1), new Object[]{"  d", "  d", "  s", 'd', diamondRefined, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(diamondRefinedHelm, 1), new Object[]{"ddd", "d d", "   ", 'd', diamondRefined});
+		GameRegistry.addRecipe(new ItemStack(diamondRefinedHelm, 1), new Object[]{"   ", "ddd", "d d", 'd', diamondRefined});
+		GameRegistry.addRecipe(new ItemStack(diamondRefinedArmor, 1), new Object[]{"d d", "ddd", "ddd", 'd', diamondRefined});
+		GameRegistry.addRecipe(new ItemStack(diamondRefinedPants, 1), new Object[]{"ddd", "d d", "d d", 'd', diamondRefined});
+		GameRegistry.addRecipe(new ItemStack(diamondRefinedBoots, 1), new Object[]{"   ", "d d", "d d", 'd', diamondRefined});
+		GameRegistry.addRecipe(new ItemStack(diamondRefinedBoots, 1), new Object[]{"d d", "d d", "   ", 'd', diamondRefined});
+		
+		//[Power]
+		GameRegistry.addRecipe(new ItemStack(powerChunk, 1), new Object[]{"idi", "iri", "idi", 'i', ironRefined, 'd', diamondRefined, 'r', Items.redstone});
+		GameRegistry.addSmelting(powerChunk, new ItemStack(powerRefined, 1), 1f);
+		GameRegistry.addRecipe(new ItemStack(powerAxe, 1), new Object[]{"gg ", "gs ", " s ", 'g', powerRefined, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(powerAxe, 1), new Object[]{" gg", " gs", "  s", 'g', powerRefined, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(powerHoe, 1), new Object[]{"gg ", " s ", " s ", 'g', powerRefined, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(powerHoe, 1), new Object[]{" gg", "  s", "  s", 'g', powerRefined, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(powerPick, 1), new Object[]{"ggg", " s ", " s ", 'g', powerRefined, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(powerShovel, 1), new Object[]{" g ", " s ", " s ", 'g', powerRefined, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(powerShovel, 1), new Object[]{"g  ", "s  ", "s  ", 'g', powerRefined, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(powerShovel, 1), new Object[]{"  g", "  s", "  s", 'g', powerRefined, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(powerSword, 1), new Object[]{" g ", " g ", " s ", 'g', powerRefined, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(powerSword, 1), new Object[]{"g  ", "g  ", "s  ", 'g', powerRefined, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(powerSword, 1), new Object[]{"  g", "  g", "  s", 'g', powerRefined, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(powerHelm, 1), new Object[]{"ggg", "g g", "   ", 'g', powerRefined});
+		GameRegistry.addRecipe(new ItemStack(powerHelm, 1), new Object[]{"   ", "ggg", "g g", 'g', powerRefined});
+		GameRegistry.addRecipe(new ItemStack(powerArmor, 1), new Object[]{"g g", "ggg", "ggg", 'g', powerRefined});
+		GameRegistry.addRecipe(new ItemStack(powerPants, 1), new Object[]{"ggg", "g g", "g g", 'g', powerRefined});
+		GameRegistry.addRecipe(new ItemStack(powerBoots, 1), new Object[]{"   ", "g g", "g g", 'g', powerRefined});
+		GameRegistry.addRecipe(new ItemStack(powerBoots, 1), new Object[]{"g g", "g g", "   ", 'g', powerRefined});
+	}
+	
+	@EventHandler
+	public void postInit(FMLPostInitializationEvent event){	
+	}
+}

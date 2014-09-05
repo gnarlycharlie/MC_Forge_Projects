@@ -1,0 +1,15 @@
+package uson.rta.items;
+
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.ItemAxe;
+
+public class carbonAxe extends ItemAxe{
+
+	public carbonAxe(ToolMaterial material) {
+		super(material);
+		setUnlocalizedName("rta_carbonAxe");
+		setTextureName("rta:carbonAxe");
+		setCreativeTab(CreativeTabs.tabTools);
+	}
+
+}

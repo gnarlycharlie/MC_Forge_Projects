@@ -1,0 +1,16 @@
+[
+{
+  "modid": "rta",
+  "name": "Refined Tools and Armor",
+  "description": "Example placeholder mod.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Charlie C."],
+  "credits": "Created by Charlie C. in collaboration with iD Tech Camps",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

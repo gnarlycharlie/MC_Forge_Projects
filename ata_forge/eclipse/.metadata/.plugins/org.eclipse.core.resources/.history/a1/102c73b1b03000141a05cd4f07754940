@@ -1,0 +1,25 @@
+package uson.rta.items;
+
+import net.minecraft.entity.Entity;
+import net.minecraft.item.ItemArmor;
+import net.minecraft.item.ItemStack;
+
+public class rtaArmor extends ItemArmor {
+
+	public rtaArmor(ArmorMaterial material, int armorType, String name) {
+		super(material, 0, armorType);
+		setUnlocalizedName("rta_" + name);
+		setTextureName("rta:" + name);
+	}
+	
+	@Override
+	public String getArmorTexture(ItemStack stack, Entity entity, int slot, String type) {
+		if(stack.getItem() == rtaCarbon.carbonHelm || stack.getItem() == rtaCarbon.carbonArmor || stack.getItem() == rtaCarbon.carbonBoots) {
+			return "rta:models/armor/carbon_layer_1.png";
+		}
+		else if(stack.getItem() == rtaCarbon.carbonPants) {
+			return "rta:models/armor/carbon_layer_2.png";
+		}
+		return null;
+	}
+}

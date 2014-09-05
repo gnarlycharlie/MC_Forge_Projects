@@ -1,0 +1,12 @@
+package uson.rta.items;
+
+import net.minecraft.item.ItemArmor;
+
+public class carbonArmor extends ItemArmor{
+
+	public carbonArmor(ArmorMaterial material, int armorType) {
+		super(material, 0, armorType);
+		// TODO Auto-generated constructor stub
+	}
+
+}

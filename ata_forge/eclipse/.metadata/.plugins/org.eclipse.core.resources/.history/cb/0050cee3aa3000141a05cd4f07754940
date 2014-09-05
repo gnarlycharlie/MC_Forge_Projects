@@ -1,0 +1,14 @@
+package uson.rta.items;
+
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.ItemSword;
+
+public class carbonSword extends ItemSword {
+
+	public carbonSword(ToolMaterial material) {
+		super(material);
+		setUnlocalizedName("rta_carbonSword");
+		setTextureName("rta:carbonSword");
+		setCreativeTab(CreativeTabs.tabCombat);
+	}
+}

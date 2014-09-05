@@ -1,0 +1,12 @@
+package uson.rta.items;
+
+import net.minecraft.item.ItemArmor;
+
+public class carbonArmor extends ItemArmor {
+
+	public carbonArmor(ArmorMaterial material, int armorType, String name) {
+		super(material, 0, armorType);
+		setUnlocalizedName(name);
+		setTextureName("rta:" + name);
+	}
+}

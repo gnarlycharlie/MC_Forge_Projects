@@ -1,0 +1,12 @@
+package uson.rta.items;
+
+import net.minecraft.item.ItemPickaxe;
+
+public class rtaPickaxe extends ItemPickaxe{
+
+	protected rtaPickaxe(ToolMaterial p_i45347_1_) {
+		super(p_i45347_1_);
+		// TODO Auto-generated constructor stub
+	}
+
+}

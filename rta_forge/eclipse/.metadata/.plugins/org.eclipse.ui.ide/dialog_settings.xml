@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="ChooseWorkspaceDialogSettings">
+		<item value="351" key="DIALOG_Y_ORIGIN"/>
+		<item value="158" key="DIALOG_X_ORIGIN"/>
+	</section>
+	<section name="WORKBENCH_SETTINGS">
+		<list key="ENABLED_TRANSFERS">
+		</list>
+	</section>
+	<section name="SaveAsDialogSettings">
+		<item value="613" key="DIALOG_WIDTH"/>
+		<item value="153" key="DIALOG_Y_ORIGIN"/>
+		<item value="174" key="DIALOG_X_ORIGIN"/>
+		<item value="560" key="DIALOG_HEIGHT"/>
+		<item value="1|Courier New|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Courier New" key="DIALOG_FONT_NAME"/>
+	</section>
+</section>

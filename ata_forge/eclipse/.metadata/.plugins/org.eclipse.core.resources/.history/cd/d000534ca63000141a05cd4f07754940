@@ -1,0 +1,12 @@
+package uson.rta.items;
+
+import net.minecraft.item.ItemArmor;
+
+public class rtaArmor extends ItemArmor {
+
+	public rtaArmor(ArmorMaterial material, int armorType, String name) {
+		super(material, 0, armorType);
+		setUnlocalizedName("rta_" + name);
+		setTextureName("rta:" + name);
+	}
+}

@@ -1,0 +1,27 @@
+package uson.rtwa;
+
+import uson.rtwa.items.rtwa_carbon;
+import cpw.mods.fml.common.Mod;
+import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLPostInitializationEvent;
+import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+
+@Mod(modid="rtwa", name="Refined Tools, Weapons and Armor", version="1.7.10")
+
+public class rtwa_main {
+
+	@Mod.EventHandler
+	public void preInit(FMLPreInitializationEvent event) {
+		rtwa_carbon.init();
+	}
+	
+	@Mod.EventHandler
+	public void init(FMLInitializationEvent event) {
+		
+	}
+	
+	@Mod.EventHandler
+	public void postInit(FMLPostInitializationEvent event) {
+		
+	}
+}

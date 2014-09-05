@@ -1,0 +1,18 @@
+[
+{
+"modid": "rta",
+"name": "Refined Tools and Armor",
+"description": "This mod adds six new types of tools and armor that are crafted using the default materials already in Minecraft. This mod not only adds more variety, but it adds more usefulness to resources that would previously stack up or be of little use.",
+"version": "1.7.10",
+"credits": "Created by Charlie C.",
+"logoFile": "",
+"mcversion": "1.7.10",
+"url": "",
+"updateUrl": "",
+"authors": [ "Charlie C." ],
+"parent":"",
+"screenshots": [],
+"dependencies": [
+     "mod_MinecraftForge"
+]
+}

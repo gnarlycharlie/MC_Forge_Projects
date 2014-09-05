@@ -1,0 +1,10 @@
+package uson.rta.items;
+
+import net.minecraft.entity.Entity;
+
+public class rtaBlazeAxe extends rtaAxe{
+
+	public rtaBlazeAxe(ToolMaterial material, String materialName) {
+		super(material, materialName);
+	}
+}

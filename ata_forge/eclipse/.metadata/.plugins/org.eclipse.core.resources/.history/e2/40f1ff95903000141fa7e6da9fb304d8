@@ -1,0 +1,7 @@
+package uson.rtwa.items;
+
+import net.minecraft.item.Item;
+
+public class rtwa_item_material extends Item {
+
+}

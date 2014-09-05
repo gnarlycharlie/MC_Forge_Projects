@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item value="339" key="DIALOG_WIDTH"/>
+		<item value="459" key="DIALOG_Y_ORIGIN"/>
+		<item value="621" key="DIALOG_X_ORIGIN"/>
+		<item value="384" key="DIALOG_HEIGHT"/>
+		<item value="1|Courier New|9.75|0|WINDOWS|1|-13|0|0|0|400|0|0|0|0|0|0|0|0|Courier New" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item value="true" key="wrap"/>
+		<item value="false" key="casesensitive"/>
+		<item value="false" key="isRegEx"/>
+		<item value="false" key="incremental"/>
+		<item value="false" key="wholeword"/>
+		<item value="ToolMat" key="selection"/>
+		<list key="findhistory">
+			<item value="toolmat"/>
+			<item value="tool"/>
+			<item value="blaze"/>
+			<item value="gold"/>
+			<item value="Blaze"/>
+			<item value="Gold"/>
+			<item value="BLAZE"/>
+			<item value="GOLD"/>
+		</list>
+		<list key="replacehistory">
+			<item value="power"/>
+			<item value="diamond"/>
+			<item value="Power"/>
+			<item value="Diamond"/>
+			<item value="POWER"/>
+			<item value="DIAMOND"/>
+			<item value="GOLD"/>
+			<item value="gold"/>
+		</list>
+	</section>
+</section>

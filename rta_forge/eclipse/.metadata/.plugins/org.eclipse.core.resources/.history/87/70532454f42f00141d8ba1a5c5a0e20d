@@ -1,0 +1,18 @@
+package com.uson.RTWA;
+
+import cpw.mods.fml.common.Mod;
+import cpw.mods.fml.common.Mod.Instance;
+import cpw.mods.fml.common.SidedProxy;
+
+@Mod(modid="RTWA", name="Refined Tools, Weapons and Armor", version="1.7.10")
+
+public class RTWA_core {
+
+	@Instance(value="RTWA")
+	public static RTWA_core instance;
+	
+	@SidedProxy(clientSide="com.uson.RTWA.client.ClientProxy", serverSide="com.uson.RTWA.CommonProxy")
+	public static CommonProxy proxy;
+	
+	
+}

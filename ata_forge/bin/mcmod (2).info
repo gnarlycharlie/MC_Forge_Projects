@@ -1,0 +1,16 @@
+[
+{
+  "modid": "ata",
+  "name": "Additional Tools and Armor",
+  "description": "This mod adds three equal types of tools and armor, each disctict by color. There are three new ores as well, each equally likely to spawn as the others.",
+  "version": "1.7.10",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["United States of Nope"],
+  "credits": "Created by Charlie C./U.S.o.N.",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

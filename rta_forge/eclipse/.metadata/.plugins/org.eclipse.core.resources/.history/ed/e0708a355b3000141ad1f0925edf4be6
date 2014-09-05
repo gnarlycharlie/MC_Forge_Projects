@@ -1,0 +1,24 @@
+package com.uson.RTWA;
+
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.Item;
+import net.minecraft.item.Item.ToolMaterial;
+import net.minecraftforge.common.util.EnumHelper;
+import cpw.mods.fml.common.Mod;
+import cpw.mods.fml.common.Mod.Instance;
+import cpw.mods.fml.common.SidedProxy;
+
+@Mod(modid="RTWA", name="Refined Tools, Weapons and Armor", version="1.7.10")
+
+public class RTWA_core {
+
+	@Instance(value="RTWA")
+	public static RTWA_core instance;
+	
+	@SidedProxy(clientSide="com.uson.RTWA.client.ClientProxy", serverSide="com.uson.RTWA.CommonProxy")
+	public static CommonProxy proxy;
+	
+	public static ToolMaterial CARBONTOOL=EnumHelper.addToolMaterial("carbon", 1, 250, 4.0F, 1, 10);
+	
+	public static Item carbonChunk=new Item().setCreativeTab(CreativeTabs.tabMaterials).setUnlocalizedName("carbonChunk").setTextureName("RTWA:carbonChunk");
+}

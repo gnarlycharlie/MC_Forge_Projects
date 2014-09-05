@@ -1,0 +1,16 @@
+[
+{
+  "modid": "RTWA",
+  "name": "Refined Tools, Weapons and Armor",
+  "description": "This mod adds six new tool, weapon and armor sets to Minecraft while utilizing only the vanilla resources found in game.",
+  "version": "$version",
+  "mcversion": "$mcversion",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Charlie C."],
+  "credits": "Charlie C.",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

@@ -1,0 +1,19 @@
+package uson.rta.items;
+
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.Entity;
+import net.minecraft.item.ItemAxe;
+
+public class rtaBlazeAxe extends ItemAxe{
+
+	public rtaBlazeAxe(ToolMaterial material, String materialName) {
+		super(material);
+		setUnlocalizedName("rta_" + materialName + "Axe");
+		setTextureName("rta:" + materialName + "Axe");
+		setCreativeTab(CreativeTabs.tabTools);
+	}
+	public int getDamageVsEntity(Entity entity) {
+		entity.setFire(10);
+		return weaponDamage;
+	}
+}

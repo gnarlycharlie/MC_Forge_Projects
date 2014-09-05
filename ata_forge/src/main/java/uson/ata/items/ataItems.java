@@ -1,0 +1,180 @@
+package uson.ata.items;
+
+import uson.ata.blocks.ataBlocks;
+import cpw.mods.fml.common.registry.GameRegistry;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.init.Items;
+import net.minecraft.item.Item;
+import net.minecraft.item.Item.ToolMaterial;
+import net.minecraft.item.ItemArmor.ArmorMaterial;
+import net.minecraft.item.ItemStack;
+import net.minecraftforge.common.util.EnumHelper;
+
+public final class ataItems {
+	public static ToolMaterial ATATOOL=EnumHelper.addToolMaterial("ata", 2, 376, 6.0F, 2.5F, 20);
+	
+	public static ArmorMaterial ATAARMOR=EnumHelper.addArmorMaterial("ata", 18, new int[]{3, 7, 5, 3}, 15);
+	
+	public static ataItem garnet;
+	public static ataAxe garnetAxe;
+	public static ataHoe garnetHoe;
+	public static ataPickaxe garnetPickaxe;
+	public static ataShovel garnetShovel;
+	public static ataSword garnetSword;
+	public static ataArmor garnetHelm;
+	public static ataArmor garnetArmor;
+	public static ataArmor garnetPants;
+	public static ataArmor garnetBoots;
+	
+	public static ataItem malachite;
+	public static ataAxe malachiteAxe;
+	public static ataHoe malachiteHoe;
+	public static ataPickaxe malachitePickaxe;
+	public static ataShovel malachiteShovel;
+	public static ataSword malachiteSword;
+	public static ataArmor malachiteHelm;
+	public static ataArmor malachiteArmor;
+	public static ataArmor malachitePants;
+	public static ataArmor malachiteBoots;
+	
+	public static ataItem sodalite;
+	public static ataAxe sodaliteAxe;
+	public static ataHoe sodaliteHoe;
+	public static ataPickaxe sodalitePickaxe;
+	public static ataShovel sodaliteShovel;
+	public static ataSword sodaliteSword;
+	public static ataArmor sodaliteHelm;
+	public static ataArmor sodaliteArmor;
+	public static ataArmor sodalitePants;
+	public static ataArmor sodaliteBoots;
+	
+	public static void init() {
+		
+		garnet = new ataItem("garnet");
+		garnetAxe = new ataAxe(ATATOOL, "garnet");
+		garnetHoe = new ataHoe(ATATOOL, "garnet");
+		garnetPickaxe = new ataPickaxe(ATATOOL, "garnet");
+		garnetShovel = new ataShovel(ATATOOL, "garnet");
+		garnetSword = new ataSword(ATATOOL, "garnet");
+		garnetHelm = new ataArmor(ATAARMOR, 0, "garnetHelm");
+		garnetArmor = new ataArmor(ATAARMOR, 1, "garnetArmor");
+		garnetPants = new ataArmor(ATAARMOR, 2, "garnetPants");
+		garnetBoots = new ataArmor(ATAARMOR, 3, "garnetBoots");
+		
+		malachite = new ataItem("malachite");
+		malachiteAxe = new ataAxe(ATATOOL, "malachite");
+		malachiteHoe = new ataHoe(ATATOOL, "malachite");
+		malachitePickaxe = new ataPickaxe(ATATOOL, "malachite");
+		malachiteShovel = new ataShovel(ATATOOL, "malachite");
+		malachiteSword = new ataSword(ATATOOL, "malachite");
+		malachiteHelm = new ataArmor(ATAARMOR, 0, "malachiteHelm");
+		malachiteArmor = new ataArmor(ATAARMOR, 1, "malachiteArmor");
+		malachitePants = new ataArmor(ATAARMOR, 2, "malachitePants");
+		malachiteBoots = new ataArmor(ATAARMOR, 3, "malachiteBoots");
+		
+		sodalite = new ataItem("sodalite");
+		sodaliteAxe = new ataAxe(ATATOOL, "sodalite");
+		sodaliteHoe = new ataHoe(ATATOOL, "sodalite");
+		sodalitePickaxe = new ataPickaxe(ATATOOL, "sodalite");
+		sodaliteShovel = new ataShovel(ATATOOL, "sodalite");
+		sodaliteSword = new ataSword(ATATOOL, "sodalite");
+		sodaliteHelm = new ataArmor(ATAARMOR, 0, "sodaliteHelm");
+		sodaliteArmor = new ataArmor(ATAARMOR, 1, "sodaliteArmor");
+		sodalitePants = new ataArmor(ATAARMOR, 2, "sodalitePants");
+		sodaliteBoots = new ataArmor(ATAARMOR, 3, "sodaliteBoots");
+		
+		GameRegistry.registerItem(garnet, "garnet");
+		GameRegistry.registerItem(garnetAxe, "garnetAxe");
+		GameRegistry.registerItem(garnetHoe, "garnetHoe");
+		GameRegistry.registerItem(garnetPickaxe, "garnetPickaxe");
+		GameRegistry.registerItem(garnetShovel, "garnetShovel");
+		GameRegistry.registerItem(garnetSword, "garnetSword");
+		GameRegistry.registerItem(garnetHelm, "garnetHelm");
+		GameRegistry.registerItem(garnetArmor, "garnetArmor");
+		GameRegistry.registerItem(garnetPants, "garnetPants");
+		GameRegistry.registerItem(garnetBoots, "garnetBoots");
+		
+		GameRegistry.registerItem(malachite, "malachite");
+		GameRegistry.registerItem(malachiteAxe, "malachiteAxe");
+		GameRegistry.registerItem(malachiteHoe, "malachiteHoe");
+		GameRegistry.registerItem(malachitePickaxe, "malachitePickaxe");
+		GameRegistry.registerItem(malachiteShovel, "malachiteShovel");
+		GameRegistry.registerItem(malachiteSword, "malachiteSword");
+		GameRegistry.registerItem(malachiteHelm, "malachiteHelm");
+		GameRegistry.registerItem(malachiteArmor, "malachiteArmor");
+		GameRegistry.registerItem(malachitePants, "malachitePants");
+		GameRegistry.registerItem(malachiteBoots, "malachiteBoots");
+		
+		GameRegistry.registerItem(sodalite, "sodalite");
+		GameRegistry.registerItem(sodaliteAxe, "sodaliteAxe");
+		GameRegistry.registerItem(sodaliteHoe, "sodaliteHoe");
+		GameRegistry.registerItem(sodalitePickaxe, "sodalitePickaxe");
+		GameRegistry.registerItem(sodaliteShovel, "sodaliteShovel");
+		GameRegistry.registerItem(sodaliteSword, "sodaliteSword");
+		GameRegistry.registerItem(sodaliteHelm, "sodaliteHelm");
+		GameRegistry.registerItem(sodaliteArmor, "sodaliteArmor");
+		GameRegistry.registerItem(sodalitePants, "sodalitePants");
+		GameRegistry.registerItem(sodaliteBoots, "sodaliteBoots");
+		
+		GameRegistry.addRecipe(new ItemStack(ataBlocks.garnetBlock, 1), new Object[]{"ccc", "ccc", "ccc", 'c', garnet});
+		GameRegistry.addShapelessRecipe(new ItemStack(garnet, 9), new Object[]{ataBlocks.garnetBlock});
+		GameRegistry.addRecipe(new ItemStack(garnetAxe, 1), new Object[]{"cc ", "cs ", " s ", 'c', garnet, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(garnetAxe, 1), new Object[]{" cc", " cs", "  s", 'c', garnet, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(garnetHoe, 1), new Object[]{"cc ", " s ", " s ", 'c', garnet, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(garnetHoe, 1), new Object[]{" cc", "  s", "  s", 'c', garnet, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(garnetPickaxe, 1), new Object[]{"ccc", " s ", " s ", 'c', garnet, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(garnetShovel, 1), new Object[]{" c ", " s ", " s ", 'c', garnet, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(garnetShovel, 1), new Object[]{"c  ", "s  ", "s  ", 'c', garnet, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(garnetShovel, 1), new Object[]{"  c", "  s", "  s", 'c', garnet, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(garnetSword, 1), new Object[]{" c ", " c ", " s ", 'c', garnet, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(garnetSword, 1), new Object[]{"c  ", "c  ", "s  ", 'c', garnet, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(garnetSword, 1), new Object[]{"  c", "  c", "  s", 'c', garnet, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(garnetHelm, 1), new Object[]{"ccc", "c c", "   ", 'c', garnet});
+		GameRegistry.addRecipe(new ItemStack(garnetHelm, 1), new Object[]{"   ", "ccc", "c c", 'c', garnet});
+		GameRegistry.addRecipe(new ItemStack(garnetArmor, 1), new Object[]{"c c", "ccc", "ccc", 'c', garnet});
+		GameRegistry.addRecipe(new ItemStack(garnetPants, 1), new Object[]{"ccc", "c c", "c c", 'c', garnet});
+		GameRegistry.addRecipe(new ItemStack(garnetBoots, 1), new Object[]{"   ", "c c", "c c", 'c', garnet});
+		GameRegistry.addRecipe(new ItemStack(garnetBoots, 1), new Object[]{"c c", "c c", "   ", 'c', garnet});
+
+		GameRegistry.addRecipe(new ItemStack(ataBlocks.malachiteBlock, 1), new Object[]{"ccc", "ccc", "ccc", 'c', malachite});
+		GameRegistry.addShapelessRecipe(new ItemStack(malachite, 9), new Object[]{ataBlocks.malachiteBlock});
+		GameRegistry.addRecipe(new ItemStack(malachiteAxe, 1), new Object[]{"cc ", "cs ", " s ", 'c', malachite, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(malachiteAxe, 1), new Object[]{" cc", " cs", "  s", 'c', malachite, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(malachiteHoe, 1), new Object[]{"cc ", " s ", " s ", 'c', malachite, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(malachiteHoe, 1), new Object[]{" cc", "  s", "  s", 'c', malachite, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(malachitePickaxe, 1), new Object[]{"ccc", " s ", " s ", 'c', malachite, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(malachiteShovel, 1), new Object[]{" c ", " s ", " s ", 'c', malachite, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(malachiteShovel, 1), new Object[]{"c  ", "s  ", "s  ", 'c', malachite, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(malachiteShovel, 1), new Object[]{"  c", "  s", "  s", 'c', malachite, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(malachiteSword, 1), new Object[]{" c ", " c ", " s ", 'c', malachite, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(malachiteSword, 1), new Object[]{"c  ", "c  ", "s  ", 'c', malachite, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(malachiteSword, 1), new Object[]{"  c", "  c", "  s", 'c', malachite, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(malachiteHelm, 1), new Object[]{"ccc", "c c", "   ", 'c', malachite});
+		GameRegistry.addRecipe(new ItemStack(malachiteHelm, 1), new Object[]{"   ", "ccc", "c c", 'c', malachite});
+		GameRegistry.addRecipe(new ItemStack(malachiteArmor, 1), new Object[]{"c c", "ccc", "ccc", 'c', malachite});
+		GameRegistry.addRecipe(new ItemStack(malachitePants, 1), new Object[]{"ccc", "c c", "c c", 'c', malachite});
+		GameRegistry.addRecipe(new ItemStack(malachiteBoots, 1), new Object[]{"   ", "c c", "c c", 'c', malachite});
+		GameRegistry.addRecipe(new ItemStack(malachiteBoots, 1), new Object[]{"c c", "c c", "   ", 'c', malachite});
+		
+		GameRegistry.addRecipe(new ItemStack(ataBlocks.sodaliteBlock, 1), new Object[]{"ccc", "ccc", "ccc", 'c', sodalite});
+		GameRegistry.addShapelessRecipe(new ItemStack(sodalite, 9), new Object[]{ataBlocks.sodaliteBlock});
+		GameRegistry.addRecipe(new ItemStack(sodaliteAxe, 1), new Object[]{"cc ", "cs ", " s ", 'c', sodalite, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(sodaliteAxe, 1), new Object[]{" cc", " cs", "  s", 'c', sodalite, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(sodaliteHoe, 1), new Object[]{"cc ", " s ", " s ", 'c', sodalite, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(sodaliteHoe, 1), new Object[]{" cc", "  s", "  s", 'c', sodalite, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(sodalitePickaxe, 1), new Object[]{"ccc", " s ", " s ", 'c', sodalite, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(sodaliteShovel, 1), new Object[]{" c ", " s ", " s ", 'c', sodalite, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(sodaliteShovel, 1), new Object[]{"c  ", "s  ", "s  ", 'c', sodalite, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(sodaliteShovel, 1), new Object[]{"  c", "  s", "  s", 'c', sodalite, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(sodaliteSword, 1), new Object[]{" c ", " c ", " s ", 'c', sodalite, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(sodaliteSword, 1), new Object[]{"c  ", "c  ", "s  ", 'c', sodalite, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(sodaliteSword, 1), new Object[]{"  c", "  c", "  s", 'c', sodalite, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(sodaliteHelm, 1), new Object[]{"ccc", "c c", "   ", 'c', sodalite});
+		GameRegistry.addRecipe(new ItemStack(sodaliteHelm, 1), new Object[]{"   ", "ccc", "c c", 'c', sodalite});
+		GameRegistry.addRecipe(new ItemStack(sodaliteArmor, 1), new Object[]{"c c", "ccc", "ccc", 'c', sodalite});
+		GameRegistry.addRecipe(new ItemStack(sodalitePants, 1), new Object[]{"ccc", "c c", "c c", 'c', sodalite});
+		GameRegistry.addRecipe(new ItemStack(sodaliteBoots, 1), new Object[]{"   ", "c c", "c c", 'c', sodalite});
+		GameRegistry.addRecipe(new ItemStack(sodaliteBoots, 1), new Object[]{"c c", "c c", "   ", 'c', sodalite});
+		
+	}
+}

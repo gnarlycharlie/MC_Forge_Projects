@@ -1,0 +1,116 @@
+package uson.rta.items;
+
+import cpw.mods.fml.common.registry.GameRegistry;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.init.Items;
+import net.minecraft.item.Item;
+import net.minecraft.item.Item.ToolMaterial;
+import net.minecraft.item.ItemArmor.ArmorMaterial;
+import net.minecraft.item.ItemStack;
+import net.minecraftforge.common.util.EnumHelper;
+
+public final class rtaItems {
+	
+	//{TOOL TYPES}
+	public static ToolMaterial CARBONTOOL=EnumHelper.addToolMaterial("carbon", 1, 250, 4.0F, 1, 10);
+	public static ToolMaterial BLAZETOOL=EnumHelper.addToolMaterial("blaze", 3, 131, 10.0F, 2, 14);
+	public static ToolMaterial IRONREFTOOL=EnumHelper.addToolMaterial("ironrefined", 2, 501, 7.0F, 3, 18);
+	public static ToolMaterial GOLDREFTOOL=EnumHelper.addToolMaterial("goldrefined", 3, 250, 10.0F, 2, 22);
+	public static ToolMaterial DIAMONDREFTOOL=EnumHelper.addToolMaterial("diamondrefined", 3, 3123, 12.0F, 4, 14);
+	public static ToolMaterial POWERTOOL=EnumHelper.addToolMaterial("power", 3, 9371, 16.0F, 6, 5);
+	
+	//{ARMOR TYPES}
+	public static ArmorMaterial CARBONARMOR=EnumHelper.addArmorMaterial("carbon", 10, new int[]{2, 4, 2, 2}, 12);
+	public static ArmorMaterial BLAZEARMOR=EnumHelper.addArmorMaterial("blaze", 10, new int[]{2, 4, 2, 2}, 12);
+	public static ArmorMaterial IRONREFARMOR=EnumHelper.addArmorMaterial("ironrefined", 24, new int[]{4, 9, 7, 4}, 12);
+	public static ArmorMaterial GOLDREFARMOR=EnumHelper.addArmorMaterial("goldrefined", 14, new int[]{3, 5, 3, 3}, 25);
+	public static ArmorMaterial DIAMONDREFARMOR=EnumHelper.addArmorMaterial("diamondrefined", 41, new int[]{7, 16, 12, 6}, 15);
+	public static ArmorMaterial POWERARMOR=EnumHelper.addArmorMaterial("power",53, new int[]{10, 19, 15, 9}, 9);
+	
+	//{MATERIALS}
+	public static Item carbonChunk;
+	public static Item carbonRefined;
+	public static Item blazeChunk;
+	public static Item blazeRefined;
+	
+	//{EQUIPMENT}
+	public static rtaAxe carbonAxe;
+	public static rtaHoe carbonHoe;
+	public static rtaPickaxe carbonPickaxe;
+	public static rtaShovel carbonShovel;
+	public static rtaSword carbonSword;
+	public static rtaArmor carbonHelm;
+	public static rtaArmor carbonArmor;
+	public static rtaArmor carbonPants;
+	public static rtaArmor carbonBoots;
+	public static rtaAxe blazeAxe;
+	
+	public static void init() {
+		
+		//{CARBON}
+		
+		//{IDENTIFICATION}
+		carbonChunk = new Item().setCreativeTab(CreativeTabs.tabMaterials).setUnlocalizedName("rta_carbonChunk").setTextureName("rta:carbonChunk");
+		carbonRefined = new Item().setCreativeTab(CreativeTabs.tabMaterials).setUnlocalizedName("rta_carbonRefined").setTextureName("rta:carbonRefined");
+		carbonAxe = new rtaAxe(CARBONTOOL, "carbon");
+		carbonHoe = new rtaHoe(CARBONTOOL, "carbon");
+		carbonPickaxe = new rtaPickaxe(CARBONTOOL, "carbon");
+		carbonShovel = new rtaShovel(CARBONTOOL, "carbon");
+		carbonSword = new rtaSword(CARBONTOOL, "carbon");
+		carbonHelm = new rtaArmor(CARBONARMOR, 0, "carbonHelm");
+		carbonArmor = new rtaArmor(CARBONARMOR, 1, "carbonArmor");
+		carbonPants = new rtaArmor(CARBONARMOR, 2, "carbonPants");
+		carbonBoots = new rtaArmor(CARBONARMOR, 3, "carbonBoots");
+		
+		//{REGISTRATION}
+		GameRegistry.registerItem(carbonChunk, "carbonChunk");
+		GameRegistry.registerItem(carbonRefined, "carbonRefined");
+		GameRegistry.registerItem(carbonAxe, "carbonAxe");
+		GameRegistry.registerItem(carbonHoe, "carbonHoe");
+		GameRegistry.registerItem(carbonPickaxe, "carbonPickaxe");
+		GameRegistry.registerItem(carbonShovel, "carbonShovel");
+		GameRegistry.registerItem(carbonSword, "carbonSword");
+		GameRegistry.registerItem(carbonHelm, "carbonHelm");
+		GameRegistry.registerItem(carbonArmor, "carbonArmor");
+		GameRegistry.registerItem(carbonPants, "carbonPants");
+		GameRegistry.registerItem(carbonBoots, "carbonBoots");
+		
+		//{RECIPICATION}
+		GameRegistry.addRecipe(new ItemStack(carbonChunk, 1), new Object[]{"cc ", "cc ", "   ", 'c', Items.coal});
+		GameRegistry.addRecipe(new ItemStack(carbonChunk, 1), new Object[]{" cc", " cc", "   ", 'c', Items.coal});
+		GameRegistry.addRecipe(new ItemStack(carbonChunk, 1), new Object[]{"   ", "cc ", "cc ", 'c', Items.coal});
+		GameRegistry.addRecipe(new ItemStack(carbonChunk, 1), new Object[]{"   ", " cc", " cc", 'c', Items.coal});
+		GameRegistry.addShapelessRecipe(new ItemStack(Items.coal, 4), new Object[]{carbonChunk});
+		GameRegistry.addSmelting(carbonChunk, new ItemStack(carbonRefined, 1), 1f);
+		GameRegistry.addRecipe(new ItemStack(carbonAxe, 1), new Object[]{"cc ", "cs ", " s ", 'c', carbonRefined, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(carbonAxe, 1), new Object[]{" cc", " cs", "  s", 'c', carbonRefined, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(carbonHoe, 1), new Object[]{"cc ", " s ", " s ", 'c', carbonRefined, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(carbonHoe, 1), new Object[]{" cc", "  s", "  s", 'c', carbonRefined, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(carbonPickaxe, 1), new Object[]{"ccc", " s ", " s ", 'c', carbonRefined, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(carbonShovel, 1), new Object[]{" c ", " s ", " s ", 'c', carbonRefined, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(carbonShovel, 1), new Object[]{"c  ", "s  ", "s  ", 'c', carbonRefined, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(carbonShovel, 1), new Object[]{"  c", "  s", "  s", 'c', carbonRefined, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(carbonSword, 1), new Object[]{" c ", " c ", " s ", 'c', carbonRefined, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(carbonSword, 1), new Object[]{"c  ", "c  ", "s  ", 'c', carbonRefined, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(carbonSword, 1), new Object[]{"  c", "  c", "  s", 'c', carbonRefined, 's', Items.stick});
+		GameRegistry.addRecipe(new ItemStack(carbonHelm, 1), new Object[]{"ccc", "c c", "   ", 'c', carbonRefined});
+		GameRegistry.addRecipe(new ItemStack(carbonHelm, 1), new Object[]{"   ", "ccc", "c c", 'c', carbonRefined});
+		GameRegistry.addRecipe(new ItemStack(carbonArmor, 1), new Object[]{"c c", "ccc", "ccc", 'c', carbonRefined});
+		GameRegistry.addRecipe(new ItemStack(carbonPants, 1), new Object[]{"ccc", "c c", "c c", 'c', carbonRefined});
+		GameRegistry.addRecipe(new ItemStack(carbonBoots, 1), new Object[]{"   ", "c c", "c c", 'c', carbonRefined});
+		GameRegistry.addRecipe(new ItemStack(carbonBoots, 1), new Object[]{"c c", "c c", "   ", 'c', carbonRefined});
+		
+		//{BLAZE}
+		
+		//{IDENTIFICATION}
+		blazeChunk = new Item().setCreativeTab(CreativeTabs.tabMaterials).setUnlocalizedName("rta_blazeChunk").setTextureName("rta:blazeChunk");
+		blazeRefined = new Item().setCreativeTab(CreativeTabs.tabMaterials).setUnlocalizedName("rta_blazeRefined").setTextureName("rta:blazeRefined");
+		blazeAxe = new rtaAxe(BLAZETOOL, "blaze");
+		
+		//{REGISTRATION}
+		GameRegistry.registerItem(blazeChunk, "blazeChunk");
+		GameRegistry.registerItem(blazeRefined, "blazeRefined");
+		GameRegistry.registerItem(blazeAxe, "blazeAxe");
+	}
+
+}

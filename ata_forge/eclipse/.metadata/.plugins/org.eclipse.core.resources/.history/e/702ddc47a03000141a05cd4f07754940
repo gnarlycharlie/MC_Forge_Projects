@@ -1,0 +1,10 @@
+package uson.rta.items;
+
+import net.minecraft.item.ItemSword;
+
+public class rtaSword extends ItemSword {
+
+	public rtaSword(ToolMaterial material) {
+		super(material);
+	}
+}

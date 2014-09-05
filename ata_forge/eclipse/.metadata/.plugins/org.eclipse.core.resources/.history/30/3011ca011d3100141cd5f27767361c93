@@ -1,0 +1,16 @@
+[
+{
+  "modid": "rta",
+  "name": "Refined Tools and Armor",
+  "description": "This mod adds six new tool and armor sets that utilize standard Minecraft resources.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Charlie C."],
+  "credits": "Created by Charlie C. in collaboration with iD Tech Camps",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
